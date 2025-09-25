@@ -1,13 +1,12 @@
 Die rooster;
 void setup()
 {
-  noLoop();
   size (500,500);
-  rooster = new Die (50,50);
+  noLoop();
+  rooster = new Die(50,50);
 }
 void draw()
 {
-  //your code here
   rooster.roll();
   rooster.show();
 }
