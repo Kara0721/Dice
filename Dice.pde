@@ -28,14 +28,16 @@ class Die //models one single dice cube
   void roll()
   {
     //your code here
-    dot = (int)(Math.random()*7)+1;
+    dot = (int)(Math.random()*6)+1;
     System.out.println(dot);
   }
   void show()
   {
     //your code here
-    rect(myX, myY, 50, 50, 20);
-    fill (0,0,0);
+    fill(255,255,255);
+    rectMode (CENTER);
+    rect(myX, myY, 50, 50,20);
+    fill (0);
     if (dot==1){
       ellipse (myX, myY, 10, 10);
     }
