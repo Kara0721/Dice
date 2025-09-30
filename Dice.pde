@@ -5,9 +5,13 @@ void setup()
 }
 void draw()
 {
-  Die rooster = new Die(50,50);
-  rooster.roll();
-  rooster.show();
+  for (int y = 25; y<500; y = y+50){
+    for (int x = 25; x < 500; x = x+50){
+      Die rooster = new Die(x,y);
+      rooster.roll();
+      rooster.show();
+    }
+  }
 }
 void mousePressed()
 {
