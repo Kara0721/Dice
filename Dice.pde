@@ -1,12 +1,11 @@
-Die rooster;
 void setup()
 {
   size (500,500);
   noLoop();
-  rooster = new Die(50,50);
 }
 void draw()
 {
+  Die rooster = new Die(50,50);
   rooster.roll();
   rooster.show();
 }
@@ -24,12 +23,13 @@ class Die //models one single dice cube
     //variable initializations here
     myX = x;
     myY = y;
+    dot = (int)(Math.random()*6)+1;
+    System.out.println(dot);
   }
   void roll()
   {
     //your code here
-    dot = (int)(Math.random()*6)+1;
-    System.out.println(dot);
+    
   }
   void show()
   {
@@ -40,6 +40,31 @@ class Die //models one single dice cube
     fill (0);
     if (dot==1){
       ellipse (myX, myY, 10, 10);
+    } else if (dot == 2){
+     ellipse(myX-10,myY-10,10,10);
+     ellipse(myX+10,myY+10,10,10);
+    } else if (dot == 3){
+      ellipse (myX, myY, 10, 10);
+      ellipse(myX-10,myY-10,10,10);
+      ellipse(myX+10,myY+10,10,10);
+    } else if (dot == 4){
+      ellipse(myX-10,myY-10,10,10);
+      ellipse(myX+10,myY+10,10,10);
+      ellipse(myX-10,myY+10,10,10);
+      ellipse(myX+10,myY-10,10,10);
+    } else if (dot == 5){
+      ellipse(myX-10,myY-10,10,10);
+      ellipse(myX+10,myY+10,10,10);
+      ellipse(myX-10,myY+10,10,10);
+      ellipse(myX+10,myY-10,10,10);
+      ellipse (myX, myY, 10, 10);
+    } else{
+      ellipse(myX-7,myY-15,10,10);
+      ellipse(myX-7,myY,10,10);
+      ellipse(myX-7,myY+15,10,10);
+      ellipse(myX+7,myY-15,10,10);
+      ellipse(myX+7,myY,10,10);
+      ellipse(myX+7,myY+15,10,10);
     }
   }
 }
