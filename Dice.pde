@@ -1,10 +1,12 @@
+int total=0;
 void setup()
 {
-  size (500,500);
+  size (500,600);
   noLoop();
 }
 void draw()
 {
+  background(235,200,255);
   for (int y = 25; y<500; y = y+50){
     for (int x = 25; x < 500; x = x+50){
       Die rooster = new Die(x,y);
@@ -12,10 +14,13 @@ void draw()
       rooster.show();
     }
   }
+  textSize(20);
+    text("The total amount of dice values is " + total, 70, 550);
 }
 void mousePressed()
 {
   redraw();
+  total = 0;
 }
 class Die //models one single dice cube
 {
@@ -28,12 +33,11 @@ class Die //models one single dice cube
     myX = x;
     myY = y;
     dot = (int)(Math.random()*6)+1;
-    System.out.println(dot);
   }
   void roll()
   {
-    //your code here
-    
+    total = total + dot;
+    System.out.println(total);
   }
   void show()
   {
