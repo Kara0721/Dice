@@ -6,6 +6,7 @@ void setup()
 }
 void draw()
 {
+background(235,200,255);
   for (int y = 25; y<500; y = y+50){
     for (int x = 25; x < 500; x = x+50){
       Die rooster = new Die(x,y);
