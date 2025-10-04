@@ -37,7 +37,6 @@ class Die //models one single dice cube
   void roll()
   {
     total = total + dot;
-    System.out.println(total);
   }
   void show()
   {
